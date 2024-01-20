@@ -1,13 +1,12 @@
 # https://github.com/lerndevops/educka/tree/master/ArgoCD  --Updated in the repository
 # https://github.com/lerndevops/kubernetes/blob/master/advanced/git-ops/ArgoCD/README.md
 # https://argo-cd.readthedocs.io/en/stable/getting_started/
-# https://github.com/argoproj/argo-cd/
 # https://github.com/argoproj/argo-cd/releases/tag/v2.8.9
 
 ARGOCD UI
+
 Argo CD is a tool which will read your environment configuration (written either as a helm chart, kustomize files, jsonnet or plain yaml files) from your git 
 repository and apply it to your Kubernetes namespaces.
-
 
 ubuntu@devops101:~/argocd-demo# kubectl create namespace argocd 
 
