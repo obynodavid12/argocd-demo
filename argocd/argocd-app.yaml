@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/obynodavid12/argocd-demo.git
     targetRevision: HEAD
-    path: argocd-demo/argocd
+    path: argocd/lab-app
     directory:
       recurse: true
   destination:
