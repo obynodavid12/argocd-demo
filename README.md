@@ -12,7 +12,7 @@ ubuntu@devops101:~/argocd-demo# kubectl create namespace argocd
 
 ubuntu@devops101:~/argocd-demo/argocd/argo# kubectl apply -n argocd -f install.yaml
 
-ubuntu@devops101:~/argocd-demo/argocd/argo# kubectl apply -n argocd -f argocd-app.yaml
+ubuntu@devops101:~/argocd-demo/argocd/argo# kubectl apply -n argocd -f argocd-app.yaml                                                                                       
 application.argoproj.io/lab-app configured
 
 ubuntu@devops101:~/argocd-demo/argocd# kubectl get svc -n argocd
