@@ -23,3 +23,5 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443 --(didnt even need to 
 To access the Argo CD UI, Go to browser and open localhost:8080 then click on Advanced and proceed 
 Enter Username: admin and Password: fetch password with this command "kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d"
 See all applications running and even from the terminal
+
+
