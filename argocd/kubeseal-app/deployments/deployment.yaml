@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubeseal-app
+  labels:
+    app: kubeseal-app
+  annotations:
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubeseal-app
+  template:
+    metadata:
+      labels:
+        app: kubeseal-app
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:latest
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysecret
+              key: password
+        ports:
+        - containerPort: 3306
