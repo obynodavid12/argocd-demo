@@ -36,4 +36,10 @@ argocd login --insecure --grpc-web kubemaster:32761 --username admin \
     --password $argoPass
 
 
+# DELETING ARGOCD APP SETUP STUCK IN DELETION WHEN I TRIED DELETING IT ON AGOCD UI
+kubectl -n argocd get application -o jsonpath='{range.items[?(@.status.sync.status=="Unknown")]}{.metadata.name}{"\n"}{end}' | xargs -I {} kubectl -n argocd patch application {} --type=json -p='[{"op":"remove", "path": "/metadata/finalizers"}]'
+application.argoproj.io/lab-app patched
+
+
+
 
