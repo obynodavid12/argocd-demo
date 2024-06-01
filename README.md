@@ -40,6 +40,10 @@ argocd login --insecure --grpc-web kubemaster:32761 --username admin \
 kubectl -n argocd get application -o jsonpath='{range.items[?(@.status.sync.status=="Unknown")]}{.metadata.name}{"\n"}{end}' | xargs -I {} kubectl -n argocd patch application {} --type=json -p='[{"op":"remove", "path": "/metadata/finalizers"}]'
 application.argoproj.io/lab-app patched
 
+OR
+
+kubectl -n argocd get applications -o=jsonpath='{range .items[?(@.status.health.status=="Unknown")]}{.metadata.name}{"\n"}'| xargs -I {} kubectl patch application {} --type=json -p='[{"op":"remove", "path": "/metadata/finalizers"}]'
+
 
 
 
