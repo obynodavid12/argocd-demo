@@ -24,4 +24,16 @@ To access the Argo CD UI, Go to browser and open localhost:8080 then click on Ad
 Enter Username: admin and Password: fetch password with this command "kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d"
 See all applications running and even from the terminal
 
+# If using the above port-forward command then patch it to either use NodePort or LoadBalancer -https://stackoverflow.com/questions/67262769/access-argocd-server?rq=3
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}' 
+https://<hosted-node-ip>:<NodePort>
+OR
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+argoPass=$(kubectl -n argocd get secret argocd-initial-admin-secret \
+    -o jsonpath="{.data.password}" | base64 -d)
+
+argocd login --insecure --grpc-web kubemaster:32761 --username admin \
+    --password $argoPass
+
+
 
