@@ -2,6 +2,7 @@
 # https://github.com/lerndevops/kubernetes/blob/master/advanced/git-ops/ArgoCD/README.md
 # https://argo-cd.readthedocs.io/en/stable/getting_started/
 # https://github.com/argoproj/argo-cd/releases/tag/v2.8.9
+# https://argo-cd.readthedocs.io/en/stable/faq/
 
 ARGOCD UI
 
