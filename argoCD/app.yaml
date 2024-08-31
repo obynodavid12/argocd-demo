@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argoCD/
+    path: argoCD/argocd-lab
     repoURL: https://github.com/obynodavid12/argocd-demo.git
     targetRevision: HEAD
   syncPolicy:
